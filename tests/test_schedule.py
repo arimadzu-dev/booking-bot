@@ -43,3 +43,10 @@ def test_slots_closer_than_min_lead_are_hidden():
 def test_fully_booked_day_has_no_slots():
     busy = [(datetime(2026, 11, 23, 10, 0), datetime(2026, 11, 23, 20, 0))]
     assert free_slots(MONDAY, 30, busy, EARLY) == []
+
+
+def test_price_is_formatted_with_thousands_and_currency():
+    from bot.texts import format_price
+
+    assert format_price(5000) == f"5 000 {schedule.CURRENCY}"
+    assert format_price(800) == f"800 {schedule.CURRENCY}"

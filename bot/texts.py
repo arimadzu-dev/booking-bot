@@ -5,7 +5,7 @@ from datetime import date, datetime
 from html import escape
 
 from bot.db import Booking
-from bot.schedule import Service, get_service
+from bot.schedule import CURRENCY, Service, get_service
 
 WEEKDAYS = ("Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс")
 
@@ -50,14 +50,19 @@ def service_title(code: str) -> str:
     return service.title if service else code
 
 
+def format_price(amount: int) -> str:
+    """5000 → «5 000 ₸»: пробел между тысячами, как принято в РК и РФ."""
+    return f"{amount:,}".replace(",", " ") + f" {CURRENCY}"
+
+
 def service_button(service: Service) -> str:
-    return f"{service.title} · {service.duration_min} мин · {service.price} ₽"
+    return f"{service.title} · {service.duration_min} мин · {format_price(service.price)}"
 
 
 def confirm_summary(service: Service, starts_at: datetime, name: str, phone: str) -> str:
     return (
         "<b>Проверьте запись</b>\n\n"
-        f"Услуга: {escape(service.title)} ({service.price} ₽)\n"
+        f"Услуга: {escape(service.title)} ({format_price(service.price)})\n"
         f"Когда: {format_moment(starts_at)}\n"
         f"Имя: {escape(name)}\n"
         f"Телефон: {phone}\n\n"

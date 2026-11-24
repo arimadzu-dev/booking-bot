@@ -16,14 +16,15 @@ class Service:
     code: str  # короткий латинский идентификатор, уходит в callback-кнопки
     title: str
     duration_min: int
-    price: int  # в рублях
+    price: int  # в валюте CURRENCY
 
 
 # ---- Настройки под конкретного мастера -------------------------------------
+CURRENCY = "₸"
 SERVICES: Tuple[Service, ...] = (
-    Service("haircut", "Мужская стрижка", 60, 1500),
-    Service("beard", "Оформление бороды", 30, 800),
-    Service("combo", "Стрижка + борода", 90, 2000),
+    Service("haircut", "Мужская стрижка", 60, 5000),
+    Service("beard", "Оформление бороды", 30, 3000),
+    Service("combo", "Стрижка + борода", 90, 7000),
 )
 WORK_START = time(10, 0)
 WORK_END = time(20, 0)
