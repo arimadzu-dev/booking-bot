@@ -6,11 +6,11 @@
 
 **Живое демо:** [@calacu_bot](https://t.me/calacu_bot) — запишитесь сами и посмотрите, как это работает.
 
-<p>
-  <img src="docs/screenshots/1-services.png" width="230" alt="Выбор услуги">
-  <img src="docs/screenshots/2-slots.png" width="230" alt="Выбор времени">
-  <img src="docs/screenshots/3-done.png" width="230" alt="Запись подтверждена">
-</p>
+| Выбор услуги | Только свободное время |
+|---|---|
+| <img src="docs/screenshots/1-services.png" alt="Выбор услуги"> | <img src="docs/screenshots/2-slots.png" alt="Выбор времени: занятые окна скрыты"> |
+
+<img src="docs/screenshots/3-done.png" width="640" alt="Запись: имя, телефон, подтверждение и уведомление мастеру">
 
 ## Что получает мастер
 
@@ -22,10 +22,11 @@
   команда `/admin` показывает расписание на неделю.
 - **Не нужно переписываться.** Клиент сам видит свободное время и сам может отменить запись.
 
-<p>
-  <img src="docs/screenshots/4-admin-notify.png" width="230" alt="Уведомление мастеру">
-  <img src="docs/screenshots/5-admin-list.png" width="230" alt="Расписание в /admin">
-</p>
+| Уведомление о новой записи | Расписание мастера `/admin` |
+|---|---|
+| <img src="docs/screenshots/4-admin-notify.png" alt="Уведомление мастеру"> | <img src="docs/screenshots/5-admin-list.png" alt="Расписание на неделю с кнопками отмены"> |
+
+<sub>На скриншотах — демо-данные: имена и номера вымышленные.</sub>
 
 ## Как это выглядит для клиента
 
